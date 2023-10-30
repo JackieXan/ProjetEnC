@@ -8,7 +8,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "cells.h"
+#include "cell.h"
+
+typedef struct List{
+    int nbLevel;
+    Cell** arrayHeads;
+}List;
+
+List* createEmptyList(int nbLevel);
+void addHeadToList(List* list,int value, int nbLevel);
+void displayLevel(List* list, int nbLevel);
 
 
 #endif //PROJETENC_LIST_H

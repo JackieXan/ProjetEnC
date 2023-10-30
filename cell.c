@@ -11,5 +11,14 @@ Cell* createCell(int value, int nbLevel){
     for (int i = 0; i < nbLevel; ++i) {
         newCell->arrayNext[i] = NULL;
     }
-    return newCell
+    return newCell;
+}
+
+void deleteCell(Cell* cell){
+    free(cell->arrayNext);
+    free(cell);
+}
+
+void displayCell(Cell* cell){
+    printf("[ %d|@ ]",cell->value);
 }

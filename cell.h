@@ -15,5 +15,7 @@ typedef struct Cell{
 }Cell;
 
 Cell* createCell(int value, int nbLevel);
+void deleteCell(Cell* cell);
+void displayCell(Cell* cell);
 
 #endif //PROJETENC_CELL_H
