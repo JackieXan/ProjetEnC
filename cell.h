@@ -1,8 +1,19 @@
 //
-// Created by cassie on 26/10/2023.
+// Created by cassie on 28/10/2023.
 //
 
-#ifndef PROJETENC_FICHIER_H
-#define PROJETENC_FICHIER_H
+#ifndef PROJETENC_CELL_H
+#define PROJETENC_CELL_H
+#include<stdlib.h>
+#include<stdio.h>
 
-#endif //PROJETENC_FICHIER_H
+typedef struct Cell{
+    int value;
+    int nbLevel;
+    struct Cell** arrayNext; //tableau dynamique
+
+}Cell;
+
+Cell* createCell(int value, int nbLevel);
+
+#endif //PROJETENC_CELL_H
