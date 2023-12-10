@@ -25,8 +25,8 @@ void addHeadToList(List* list,int value, int nbLevel){
     }
 }
 
-void displayLevel(List* list, int nbLevel){
-    if(nbLevel <= list->nbLevel-1){ // pour pas planter si ex list 10 etages si envoit liste 11 etages plante pas (merci val)
+void displayLevel(List *list, int nbLevel) {
+    if (nbLevel <= list->nbLevels - 1) { // pour pas planter si ex list 10 etages si envoie liste 11 etages plante pas
         printf("[list head_%d @-]", nbLevel);
         Cell* temp = list->arrayHeads[nbLevel];
         while(temp != NULL){
