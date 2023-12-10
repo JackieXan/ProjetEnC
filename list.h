@@ -10,14 +10,28 @@
 #include <stdlib.h>
 #include "cell.h"
 
-typedef struct List{
-    int nbLevel;
-    Cell** arrayHeads;
-}List;
+typedef struct List {
+    int nbLevels;
+    Cell **arrayHeads;
+} List;
 
-List* createEmptyList(int nbLevel);
-void addHeadToList(List* list,int value, int nbLevel);
-void displayLevel(List* list, int nbLevel);
+//on a pas stocké le max de level -> a calculer
+List *createEmptyList(int nbLevel);
 
+void addHeadToList(List *list, int value, int nbLevel);
+
+void displayLevel(List *list, int nbLevel);
+
+void displayList(List *list);
+
+void displayPrettyList(List *list);
+
+void displayPrettyLevel(List *list, int nbLevel);
+
+void addValueInList(List *list, Cell *cell, int level);
+
+Cell *searchForOneLevel(List *list, int value);
+
+Cell *searchValue(List *list, int value);
 
 #endif //PROJETENC_LIST_H

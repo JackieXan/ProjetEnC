@@ -3,22 +3,37 @@
 //
 
 #include "cell.h"
-Cell* createCell(int value, int nbLevel){
-    Cell* newCell = (Cell*)malloc(sizeof(Cell));
+
+void displayEmptyCell();
+
+Cell *createCell(int value, int level) {
+    Cell *newCell = (Cell *) malloc(sizeof(Cell));
     newCell->value = value;
-    newCell->nbLevel = nbLevel;
-    newCell->arrayNext = (Cell**) malloc(sizeof(Cell*)*nbLevel);
-    for (int i = 0; i < nbLevel; ++i) {
-        newCell->arrayNext[i] = NULL;
+    newCell->level = level;
+    newCell->arrayNexts = (Cell **) malloc(sizeof(Cell *) * level);
+    for (int i = 0; i < level; ++i) {
+        newCell->arrayNexts[i] = NULL;
     }
     return newCell;
 }
 
-void deleteCell(Cell* cell){
-    free(cell->arrayNext);
+void deleteCell(Cell *cell) {
+    free(cell->arrayNexts);
     free(cell);
 }
 
-void displayCell(Cell* cell){
-    printf("[ %d|@ ]",cell->value);
+void displayCell(Cell *cell) {
+    printf("[ %4d|@ ]", cell->value);
+}
+
+void displayCellByLevel(Cell *cell, int level) {
+    if (level < cell->level) {
+        displayCell(cell);
+    } else {
+        displayEmptyCell();
+    }
+}
+
+void displayEmptyCell() {
+    printf("----------");
 }

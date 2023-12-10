@@ -4,18 +4,26 @@
 
 #ifndef PROJETENC_CELL_H
 #define PROJETENC_CELL_H
+
 #include<stdlib.h>
 #include<stdio.h>
 
-typedef struct Cell{
+typedef struct Cell {
     int value;
-    int nbLevel;
-    struct Cell** arrayNext; //tableau dynamique
+    int level;
+    struct Cell **arrayNexts; //tableau dynamique
 
-}Cell;
+} Cell;
 
-Cell* createCell(int value, int nbLevel);
-void deleteCell(Cell* cell);
-void displayCell(Cell* cell);
+Cell *createCell(int value, int level);
+
+void deleteCell(Cell *cell);
+
+void displayCell(Cell *cell);
+
+void displayCellByLevel(Cell *cell, int level);
+
+void displayEmptyCell();
+
 
 #endif //PROJETENC_CELL_H
